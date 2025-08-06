@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bean There Cafe - Online Order</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-b from-yellow-50 via-yellow-100 to-yellow-200 min-h-screen flex flex-col">
+
+    <header class="bg-yellow-600 text-white shadow-md fixed w-full z-30">
+        <nav class="max-w-7xl mx-auto flex items-center justify-between p-4">
+            <a href="index.html" class="font-extrabold text-2xl tracking-wider hover:text-yellow-300 flex items-center gap-2">
+                <i class="fas fa-mug-hot"></i> Bean There Cafe
+            </a>
+            <button id="nav-toggle" aria-label="Toggle menu" class="lg:hidden focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            <ul id="nav-menu" class="hidden lg:flex space-x-8 font-semibold text-yellow-50">
+                <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                <li><a href="menu.html" class="hover:text-yellow-300">Menu</a></li>
+                <li><a href="order.html" class="hover:text-yellow-300">Order</a></li>
+                <li><a href="loyalty.html" class="hover:text-yellow-300">Loyalty</a></li>
+                <li><a href="locations.html" class="hover:text-yellow-300">Locations</a></li>
+                <li><a href="baristas.html" class="hover:text-yellow-300">Baristas</a></li>
+                <li><a href="blog.html" class="hover:text-yellow-300">Blog</a></li>
+                <li><a href="events.html" class="hover:text-yellow-300">Events</a></li>
+                <li><a href="catering.html" class="hover:text-yellow-300">Catering</a></li>
+                <li><a href="giftcards.html" class="hover:text-yellow-300">Gift Cards</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu" class="lg:hidden bg-yellow-700 hidden flex-col space-y-4 p-4 font-semibold text-yellow-100">
+            <a href="index.html" class="hover:text-yellow-300">Home</a>
+            <a href="menu.html" class="hover:text-yellow-300">Menu</a>
+            <a href="order.html" class="hover:text-yellow-300">Order</a>
+            <a href="loyalty.html" class="hover:text-yellow-300">Loyalty</a>
+            <a href="locations.html" class="hover:text-yellow-300">Locations</a>
+            <a href="baristas.html" class="hover:text-yellow-300">Baristas</a>
+            <a href="blog.html" class="hover:text-yellow-300">Blog</a>
+            <a href="events.html" class="hover:text-yellow-300">Events</a>
+            <a href="catering.html" class="hover:text-yellow-300">Catering</a>
+            <a href="giftcards.html" class="hover:text-yellow-300">Gift Cards</a>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-24 max-w-4xl mx-auto px-6">
+        <section class="mb-12">
+            <h1 class="text-yellow-900 text-4xl font-extrabold mb-4 text-center">Online Ordering</h1>
+            <p class="text-yellow-800 text-center max-w-2xl mx-auto mb-8">
+                Choose your favorite drinks and pastries, then select a pickup time that works for you.
+            </p>
+
+            <form id="order-form" class="bg-yellow-50 rounded-lg shadow-lg p-8 max-w-xl mx-auto">
+                <div class="mb-6">
+                    <label for="items" class="block font-semibold text-yellow-900 mb-2">Select Items</label>
+                    <select id="items" name="items" multiple class="w-full p-3 rounded border border-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                        <optgroup label="Drinks">
+                            <option value="Espresso">Espresso - $3.00</option>
+                            <option value="Americano">Americano - $3.50</option>
+                            <option value="Cappuccino">Cappuccino - $4.00</option>
+                            <option value="Latte">Latte - $4.50</option>
+                            <option value="Mocha">Mocha - $5.00</option>
+                            <option value="Cold Brew">Cold Brew - $4.50</option>
+                        </optgroup>
+                        <optgroup label="Pastries">
+                            <option value="Croissant">Croissant - $3.00</option>
+                            <option value="Muffin">Muffin - $2.50</option>
+                            <option value="Scone">Scone - $3.25</option>
+                            <option value="Banana Bread">Banana Bread - $3.75</option>
+                            <option value="Chocolate Chip Cookie">Chocolate Chip Cookie - $2.00</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="mb-6">
+                    <label for="pickup-time" class="block font-semibold text-yellow-900 mb-2">Pickup Time</label>
+                    <input type="datetime-local" id="pickup-time" name="pickup-time" class="w-full p-3 rounded border border-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-400" required min="" />
+                </div>
+
+                <div class="mb-6">
+                    <label for="name" class="block font-semibold text-yellow-900 mb-2">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your full name" class="w-full p-3 rounded border border-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-400" required />
+                </div>
+
+                <div class="mb-6">
+                    <label for="phone" class="block font-semibold text-yellow-900 mb-2">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Your phone number" class="w-full p-3 rounded border border-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-400" required />
+                </div>
+
+                <button type="submit" class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold px-6 py-3 rounded shadow-lg w-full">
+                    Place Order <i class="fas fa-check ml-2"></i>
+                </button>
+
+                <p id="order-message" class="mt-4 text-center font-semibold"></p>
+            </form>
+        </section>
+    </main>
+
+    <a href="https://odoe.studio" target="_blank" rel="noopener noreferrer" 
+       class="fixed bottom-4 right-4 bg-yellow-600 text-yellow-50 text-xs rounded-full px-3 py-1 shadow-lg hover:bg-yellow-700 transition font-semibold">
+        Made by Odoe
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
